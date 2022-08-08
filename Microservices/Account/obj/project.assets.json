@@ -2980,19 +2980,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\": {}
+    "C:\\Users\\ldouglas\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Account\\Account.csproj",
+      "projectUniqueName": "C:\\Users\\ldouglas\\OneDrive\\Year_2\\PRO290\\MTG-Deckbuilder\\Microservices\\Account\\Account.csproj",
       "projectName": "Account",
-      "projectPath": "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Account\\Account.csproj",
-      "packagesPath": "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Account\\obj\\",
+      "projectPath": "C:\\Users\\ldouglas\\OneDrive\\Year_2\\PRO290\\MTG-Deckbuilder\\Microservices\\Account\\Account.csproj",
+      "packagesPath": "C:\\Users\\ldouglas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ldouglas\\OneDrive\\Year_2\\PRO290\\MTG-Deckbuilder\\Microservices\\Account\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\JoshuaJohnson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ldouglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3049,7 +3054,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
