@@ -29,6 +29,12 @@ namespace Service
         public async Task<Card?> GetNameAsync(string name) =>
             await _card.Find(i => i.Name == name).FirstOrDefaultAsync();
 
+        public async Task<List<Card>> GetTypeAsync(string type) =>
+            await _card.Find(i => i.Type == type).ToListAsync();
+
+        public async Task<List<Card>> GetSetAsync(string set) =>
+            await _card.Find(i => i.Set == set).ToListAsync();
+
         public async Task CreateAsync(Card card) => 
             await _card.InsertOneAsync(card);
 
@@ -37,5 +43,8 @@ namespace Service
 
         public async Task RemoveAsync(string name) =>
             await _card.DeleteOneAsync(i => i.Name == name);
+
+        public async Task RemoveAllAsync() =>
+            await _card.DeleteManyAsync(Builders<Card>.Filter.Empty);
     }
 }
