@@ -60,7 +60,7 @@ namespace Controllers
         [HttpPut]
         public async Task<IResult> PutAccount(Account acc1)
         {
-            var acc2 = await _ACDB.Accounts.FindAsync(acc1.AccountId);
+            var acc2 = await _ACDB.Accounts.FindAsync(acc1.Id);
             if(acc2 == null)
             {
                 return Results.NotFound();

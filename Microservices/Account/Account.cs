@@ -1,6 +1,6 @@
 public class Account
 {
-    public int AccountId { get; set; }
+    public int Id { get; set; }
     //Email
     public string Email {get; set;}
     //First Name
