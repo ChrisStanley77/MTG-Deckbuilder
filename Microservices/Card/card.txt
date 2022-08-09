@@ -1,1 +1,0 @@
-Area where card microservice will go.
