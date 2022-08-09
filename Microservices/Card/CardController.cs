@@ -16,20 +16,7 @@ namespace Controllers
             _card = cardService;
         }
 
-//////////////////////// All Gets //////////////////////////////////////
-
-        //Get IP Address
-        [HttpGet]
-        [Route("getIP")]
-        public string GetIP()
-        {
-            // Getting host name
-            string host = Dns.GetHostName();
-            
-            // Getting ip address using host name
-            IPHostEntry ip = Dns.GetHostEntry(host);
-            return ip.AddressList[0].ToString();
-        }
+//////////////////////// All Gets //////////////////////////////////////////////////////////////////////////////////////////////
 
         //Get all cards
         [HttpGet]
@@ -37,19 +24,31 @@ namespace Controllers
         public async Task<List<Card>> GetAllItems() =>
             await _card.GetAsync();
 
-        //Get all cards that have a specific type
+        //Get all cards with specified type
         [HttpGet]
         [Route("getbytype/{type}")]
         public async Task<List<Card>> GetByType(string type) =>
             await _card.GetTypeAsync(type);
 
-        //Get all cards that are in a specific set
+        //Get all cards in specified set
         [HttpGet]
         [Route("getbyset/{set}")]
         public async Task<List<Card>> GetBySet(string set) =>
             await _card.GetSetAsync(set);
 
-        //Get card by id
+        //Get all cards by specified color
+        [HttpGet]
+        [Route("getbycolor/{color}")]
+        public async Task<List<Card>> GetByColor(string color) =>
+            await _card.GetCardByColorsAsync(color);
+
+        //Get all card by specified converted mana cost
+        [HttpGet]
+        [Route("getbycmc/{cost}")]
+        public async Task<List<Card>> GetByConvertedManaCost(int convertedManaCost) =>
+            await _card.GetCardCostAsync(convertedManaCost);
+
+        //Get card by specified id
         [HttpGet("{id}")]
         public async Task<ActionResult<Card>> GetById(string id)
         {
@@ -62,7 +61,7 @@ namespace Controllers
             return TempItem;
         }
 
-        //Get card by name
+        //Get card by specified name
         [HttpGet]
         [Route("getbyname/{name}")]
         public async Task<ActionResult<Card>> GetByName(string name)
@@ -76,46 +75,55 @@ namespace Controllers
             return NotFound();
         }
 
-
-
-///////////////////////////////// All Posts /////////////////////////////
+///////////////////////////////// All Posts ////////////////////////////////////////////////////////////////////////////////////
 
         //Make a card
         [HttpPost]
         [Route("makeitem")]
-        public async Task<IActionResult> MakeItem(Card card)
-        {           
-            if(card.Name is not null && card.Image is not null && card.Mana is not null && card.Set is not null && card.Text is not null &&
-            card.Type is not null)
+        public async Task<IActionResult> MakeCard(Card card)
+        {
+            if(card.Name is not null && card.Image is not null && card.Set is not null && card.Text is not null &&
+            card.Type is not null && card.CardColors is not null)
             {
                 if(!card.Name.Equals(""))
                 {
                     if(!card.Image.Equals(""))
                     {
-                        if(!card.Mana.Equals(""))
+                        if(!card.Text.Equals(""))
                         {
-                            if(!card.Text.Equals(""))
+                            if(!card.Type.Equals(""))
                             {
-                                if(!card.Type.Equals(""))
+                                if(!card.Set.Equals(""))
                                 {
-                                    if(!card.Set.Equals(""))
+                                    if(card.ConvertedManaCost >= 0)
                                     {
-                                        await _card.CreateAsync(card);
-                                        return CreatedAtAction(nameof(GetAllItems), new {id = card.Id}, card);
+                                        int AllColorsInList = card.CardColors.Count();
+                                        int ValidColors = 0;
+                                        foreach(string color in card.CardColors)
+                                        {
+                                            if(!color.Equals(""))
+                                            {
+                                                ValidColors++;
+                                            }
+                                        }
+                                        if(ValidColors == AllColorsInList)
+                                        {
+                                            await _card.CreateAsync(card);
+                                            return CreatedAtAction(nameof(GetAllItems), new {id = card.Id}, card);
+                                        }                                       
                                     }
                                 }
-                            }                            
+                            }
                         }
                     }
                 }               
-            }
-            
+            }            
             return Conflict();
         }
 
-/////////////////////////////// All Updates /////////////////////////////
+/////////////////////////////// All Updates /////////////////////////////////////////////////////////////////////////////////
 
-        //Update card by id
+        //Update card by a specified id
         [HttpPut]
         [Route("{name}")]
         public async Task<IActionResult> UpdateItem(string name, Card card)
@@ -132,9 +140,9 @@ namespace Controllers
             return NotFound();
         }
 
-////////////////////////////// All Deletes //////////////////////////////
+////////////////////////////// All Deletes //////////////////////////////////////////////////////////////////////////////////
 
-        //Delete card by id
+        //Delete card by specified id
         [HttpDelete]
         [Route("{name}")]
         public async Task<IActionResult> DeleteItem(string name)

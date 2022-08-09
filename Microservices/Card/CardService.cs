@@ -35,6 +35,12 @@ namespace Service
         public async Task<List<Card>> GetSetAsync(string set) =>
             await _card.Find(i => i.Set == set).ToListAsync();
 
+        public async Task<List<Card>> GetCardCostAsync(int ConvertedManaCost) =>
+            await _card.Find(i => i.ConvertedManaCost == ConvertedManaCost).ToListAsync();
+
+        public async Task<List<Card>> GetCardByColorsAsync(string color) =>
+            await _card.Find(i => i.CardColors.Contains(color)).ToListAsync();
+
         public async Task CreateAsync(Card card) => 
             await _card.InsertOneAsync(card);
 
