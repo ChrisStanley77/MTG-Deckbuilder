@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj": {}
+    "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj": {}
   },
   "projects": {
-    "c:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj": {
+    "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj",
+        "projectUniqueName": "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj",
         "projectName": "Card",
-        "projectPath": "c:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj",
+        "projectPath": "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj",
         "packagesPath": "C:\\Users\\cstanley\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Card\\obj\\",
+        "outputPath": "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Card\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
