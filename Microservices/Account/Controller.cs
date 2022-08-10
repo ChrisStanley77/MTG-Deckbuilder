@@ -31,9 +31,9 @@ namespace Controllers
         }
 
         [HttpGet]
-        [Route("test")]
-        public ActionResult<String> TestEndPoint(){
-            return "Test Succesful";
+        [Route("help")]
+        public ActionResult<String> AccountHelp(){
+            return "End Point URI's\n1. account - POST\n2. account - PUT\n3. account/{email} - GET 1 Record\n4. account/{email} - DELETE";
         }
 
         [HttpPost]
