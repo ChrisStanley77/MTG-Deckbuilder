@@ -1,1 +1,14 @@
-This is where we test all decks to conform to formats.
+Commander Rules
+---------------
+1. Deck Size = 100
+2. Must have min of 1 max of 2 Commander(s)
+3. All cards must share colors with the Commander(s)
+4. Only 1 copy of each card is allowed, except for basic lands
+
+
+
+Modern Rules
+------------
+1. Deck Size = 60
+2. No more than 4 copies of each card are allowed, except for basic lands
+3. Sideboard = 15 max
