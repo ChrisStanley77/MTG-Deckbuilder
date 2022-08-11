@@ -1,6 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
+search s = new search();
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/", () => s.getCards());
 
 app.Run();
