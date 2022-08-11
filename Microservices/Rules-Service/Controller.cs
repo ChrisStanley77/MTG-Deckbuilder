@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Net;
-using System.Collection.Generic;
+using System.Collections.Generic;
 
 
 namespace Controllers
@@ -32,31 +32,38 @@ namespace Controllers
 
         [HttpPost]
         [Route("standard")]
-        public ActionResult<String> StandardRules(List<string> cards){
+        public void StandardRules(List<string> cards){
             bool isValidSize = false;
             bool isValidCardNum = false;
             //Check Total Deck Size
-            if(cards.Size > 60 || cards.Size < 60 ){
+            if(cards.Count() == 60 ){
                 isValidSize = true;
             }
 
-            List<string> refList = new List<string> ("Forest", "Mountain", "Island", "Plains", "Wastes");
-            Dictionary allCards = new Dictionary<string, int>();
+            List<string> refList = new List<string> {"Forest", "Mountain", "Island", "Plains", "Wastes"};
+            Dictionary<string, int> allCards = new Dictionary<string, int>();
             //Check if there are only 4 or less copies of a card in the deck
             foreach(string card in cards){
                 if(allCards.ContainsKey(card) == true){
-                    if(allCards[card] == 4 && !refList.Contains(card)){
-
+                    if(allCards[card] > 4 && !refList.Contains(card)){
+                        isValidCardNum = false;
                     }
                     else{
-                        allCards[card] += 1;
+                        isValidCardNum = true;
                     }
+                    allCards[card] += 1;
                 }
                 else{
-                    allCards.add(card, 1);
+                    allCards.Add(card, 1);
                 }
             }
-
+            System.Console.WriteLine(cards.Count());
+            foreach(KeyValuePair<string, int> ele2 in allCards)
+            {
+                Console.WriteLine("{0} : {1}", ele2.Key, ele2.Value);
+            }
+            System.Console.WriteLine("Deck has 60 cards : {0}", isValidSize);
+            System.Console.WriteLine("Deck has only 4 or less copies of each card : {0}", isValidCardNum);
         }
     }
 }
