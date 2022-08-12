@@ -13,5 +13,6 @@ public class Card
     public string Type { get; set;} = null!;
     public string Text { get; set;} = null!;
     public string Set { get; set;} = null!;
-    public string? Stats { get; set; }
+    public string? Power { get; set; }
+    public string? Toughness { get; set;}
 }

@@ -8,10 +8,10 @@ namespace Controllers
     [ApiController]
     [Route("card")]
     
-    public class MyController : ControllerBase
+    public class MyCardController : ControllerBase
     {
         private readonly CardService _card;
-        public MyController(CardService cardService)
+        public MyCardController(CardService cardService)
         {
             _card = cardService;
         }
@@ -123,10 +123,10 @@ namespace Controllers
 
 /////////////////////////////// All Updates /////////////////////////////////////////////////////////////////////////////////
 
-        //Update card by a specified id
+        //Update card by a specified name
         [HttpPut]
         [Route("{name}")]
-        public async Task<IActionResult> UpdateItem(string name, Card card)
+        public async Task<IActionResult> UpdateCard(string name, Card card)
         {
             //var TempItem = await _item.GetIdAsync(id);
             var TempItem = await _card.GetNameAsync(name);
@@ -145,9 +145,8 @@ namespace Controllers
         //Delete card by specified id
         [HttpDelete]
         [Route("{name}")]
-        public async Task<IActionResult> DeleteItem(string name)
+        public async Task<IActionResult> DeleteCard(string name)
         {
-            //var DatabaseItem = await _item.GetIdAsync(id);
             var TempItem = await _card.GetNameAsync(name);
 
             if(TempItem is not null)
