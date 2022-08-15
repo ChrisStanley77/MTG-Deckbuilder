@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj": {}
+    "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj": {
+    "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj",
+        "projectUniqueName": "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj",
         "projectName": "Card",
-        "projectPath": "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj",
-        "packagesPath": "C:\\Users\\cstanley\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Card\\obj\\",
+        "projectPath": "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj",
+        "packagesPath": "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Card\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\cstanley\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\JoshuaJohnson\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
