@@ -116,7 +116,7 @@ public class search
             // System.Console.WriteLine(ca.pngUrl);
 
         }
-        // File.Delete("cards.json");
+        File.Delete("cards.json");
         // foreach(card c in cards)
         // {
             
