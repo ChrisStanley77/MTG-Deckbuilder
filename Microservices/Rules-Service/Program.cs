@@ -1,15 +1,12 @@
+using Microsoft.EntityFrameworkCore;
 using Steeltoe.Discovery.Client;
-using Settings;
-using Service;
-using Services;
+using Steeltoe.Common.Discovery;
+using Steeltoe.Discovery.Eureka;
+using Steeltoe.Discovery;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDiscoveryClient(builder.Configuration);
-builder.Services.Configure<CardDatabaseSettings>(builder.Configuration.GetSection("CardDatabase"));
-builder.Services.Configure<DeckDatabaseSettings>(builder.Configuration.GetSection("DeckDatabase"));
-builder.Services.AddSingleton<CardService>();
-builder.Services.AddSingleton<DeckService>();
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(
@@ -19,8 +16,8 @@ builder.Services.AddCors(options =>
         });
 });
 var app = builder.Build();
-
-app.MapGet("/", () => "Hello World!");
 app.MapControllers();
 app.UseCors();
+app.MapGet("/", () => "Hello World!");
+
 app.Run();
