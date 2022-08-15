@@ -2,7 +2,7 @@ using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using Settings;
 
-namespace ServiceDeck
+namespace Services
 {
     public class DeckService
     {
