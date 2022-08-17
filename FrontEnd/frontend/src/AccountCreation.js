@@ -1,6 +1,5 @@
 import React from "react";
-import App from "./App";
-import {useState, setState} from "react";
+import {useState} from "react";
 import './Account.css';
 
 function AccountCreation() {
