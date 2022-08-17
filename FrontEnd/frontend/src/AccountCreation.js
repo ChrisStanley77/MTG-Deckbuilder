@@ -40,19 +40,27 @@ function AccountCreation() {
                 <div className="form-body">
                     <div className="email">
                         <label className="label" >Email</label>
-                        <input className="input" type={"text"} value={email} onChange= {(e) => handleChange(e)} id="email" placeholder="Email"></input>
+                        <div>
+                            <input className="input" type={"text"} value={email} onChange= {(e) => handleChange(e)} id="email" placeholder="Email"></input>
+                        </div>
                     </div>
                     <div className="username">
                         <label className="label" >Username</label>
+                        <div>
                         <input className="input" type={"text"} value={username} onChange= {(e) => handleChange(e)} id="username" placeholder="Username"></input>
+                        </div>
                     </div>
                     <div className="password">
                         <label className="label" >Password</label>
+                        <div>
                         <input className="input" type={"password"} value={password} onChange= {(e) => handleChange(e)} id="password" placeholder="Password"></input>
+                        </div>
                     </div>
                     <div className="confirm-password">
                         <label className="label" >Confirm Password</label>
+                        <div>
                         <input className="input" type={"password"} value={confirmPassword} onChange= {(e) => handleChange(e)} id="confirmPassword" placeholder="Confirm Password"></input>
+                        </div>
                     </div>
                 </div>
                 <div className="footer">
