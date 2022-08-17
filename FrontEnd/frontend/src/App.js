@@ -1,12 +1,14 @@
 import './App.css';
 //import AccountCreation from './AccountCreation';
-import Login from './LoginPage';
+//import Login from './LoginPage';
+import DecksPage from './DecksPage';
 
 function App() {
   return (
     <div>
       {/*<AccountCreation/>*/}
-      <Login/>
+      {/*<Login/>*/}
+      <DecksPage/>
     </div>
   );
 }
