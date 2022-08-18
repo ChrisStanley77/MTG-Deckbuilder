@@ -4,6 +4,7 @@ import AccountCreation from './AccountCreation';
 import Login from './LoginPage';
 import DecksPage from './DecksPage';
 import Deck from './DeckCreation';
+import {BrowserRouter, Link} from "react-router-dom";
 
 function HomePage(){
   const [search, setSearch] = useState("");
@@ -20,20 +21,25 @@ function HomePage(){
     console.log(search);
   }
 
-
   return(
-    <div>
-      <h1 className='homeTitle'>Welcome to MTG Deck Builder</h1>
-      <div className='buttonLogin'>
-        <button className='login' type='submit'>Login</button>
-      </div>
+    <BrowserRouter>
       <div>
-        <input className="search" type={"text"} value={search} onChange= {(e) => handleChange(e)} id="search" placeholder="Search"></input>
+        <h1 className='homeTitle'>Welcome to MTG Deck Builder</h1>
+        <div className='buttonLogin'>
+          <nav>
+            <Link to={"/LoginPage"}>
+              <button className='login' type='submit'>Login</button>
+            </Link>
+          </nav>
+        </div>
+        <div>      
+          <input className="search" type={"text"} value={search} onChange= {(e) => handleChange(e)} id="search" placeholder="Search"></input>
+        </div>
+        <div>
+          <button onClick={() => handleClick()} className='button' type='submit'>Search</button>
+        </div>
       </div>
-      <div>
-        <button onClick={() => handleClick()} className='button' type='submit'>Search</button>
-      </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
