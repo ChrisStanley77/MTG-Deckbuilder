@@ -1,9 +1,9 @@
 import './App.css';
 import {useState} from "react";
-//import AccountCreation from './AccountCreation';
-//import Login from './LoginPage';
+import AccountCreation from './AccountCreation';
+import Login from './LoginPage';
 import DecksPage from './DecksPage';
-//import Deck from './DeckCreation';
+import Deck from './DeckCreation';
 
 function HomePage(){
   const [search, setSearch] = useState("");
@@ -24,10 +24,15 @@ function HomePage(){
   return(
     <div>
       <h1 className='homeTitle'>Welcome to MTG Deck Builder</h1>
+      <div className='buttonLogin'>
+        <button className='login' type='submit'>Login</button>
+      </div>
       <div>
         <input className="search" type={"text"} value={search} onChange= {(e) => handleChange(e)} id="search" placeholder="Search"></input>
       </div>
-      <button onClick={handleClick()} className='button' type='submit'>Search</button>
+      <div>
+        <button onClick={() => handleClick()} className='button' type='submit'>Search</button>
+      </div>
     </div>
   );
 }
@@ -35,7 +40,7 @@ function HomePage(){
 function App() {
   return (
     <div>
-      {/*<AccountCreation/>*/}
+      {/* <AccountCreation/> */}
       {/*<Login/>*/}
       {/*<DecksPage/>*/}
       <HomePage/>
