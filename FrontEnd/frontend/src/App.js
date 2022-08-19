@@ -1,13 +1,39 @@
 import './App.css';
 import {useState} from "react";
+import { View, Image, StyleSheet } from 'react-native';
 import AccountCreation from './AccountCreation';
 import Login from './LoginPage';
 import DecksPage from './DecksPage';
 import Deck from './DeckCreation';
 import {BrowserRouter, Link} from "react-router-dom";
 
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 50,
+  },
+  Card: {
+    width: auto,
+    height: auto,
+  },
+});
+
+
+const DisplayAnImage = (props) => {
+  return (
+    <View style={styles.container}>
+      <Image
+        style={styles.Card}
+        source={{
+          uri: 'https://reactnative.dev/img/tiny_logo.png',
+        }}
+      />
+    </View>
+  );
+}
+
 function HomePage(){
   const [search, setSearch] = useState("");
+  const [cards, setCards] = useState([]);
 
   const handleChange = (e) => {
     const {id, value} = e.target;
@@ -18,6 +44,7 @@ function HomePage(){
   }
 
   const handleClick = () => {
+    
     console.log(search);
   }
 
