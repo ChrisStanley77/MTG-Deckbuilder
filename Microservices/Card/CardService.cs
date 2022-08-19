@@ -6,7 +6,7 @@ namespace Service
 {
     public class CardService
     {
-
+        private readonly IMongoCollection<Card> _card;
         public CardService(IOptions<CardDatabaseSettings> cardDatabaseSettings)
         {
             var mongoClient = new MongoClient(

@@ -32,16 +32,13 @@ namespace Controllers
 
         [HttpPost]
         [Route("standard")]
-        public ActionResult<Boolean> StandardRules(List<string> deck){
+        public ActionResult<Boolean> StandardRules(List<Card> deck){
             bool isValidSize = false;
             bool isValidCardNum = CheckCardAmounts(4, deck);
             //Check Total Deck Size
             if(deck.Count() == 60 ){
                 isValidSize = true;
             }
-            
-            System.Console.WriteLine("Deck has 60 cards : {0}", isValidSize);
-            System.Console.WriteLine("Deck size : {0}/60", deck.Count());
             if(isValidCardNum && isValidSize){
                 return true;
             }
@@ -55,9 +52,9 @@ namespace Controllers
         [Route("commander")]
         public ActionResult<Boolean> CommanderRules(List<Card> deck){
             bool isValidSize = false;
-            bool isValidCardNum = false;
+            bool isValidCardNum = CheckCardAmounts(1, deck);
             bool isValidColors = false;
-            Card commander = deck[0];
+            List<string> CommanderColors = ChangeCardColorsToList(deck[0].CardColors, true);
 
             //Check Total Deck Size
             if(deck.Count() == 100 ){
@@ -66,20 +63,15 @@ namespace Controllers
 
             //Check if all cards are the same colors as commander
             List<Card> invalidColoredCards = new List<Card>();
-            System.Console.WriteLine(commander.ToString());
             foreach(Card card in deck){
                 if(!card.Type.Contains("Land")){
-                    var cardIsInCommanderColors = card.CardColors.Any(x => commander.CardColors.Any(y => y == x));
-                    System.Console.WriteLine("Card : {0}\nCard Colors : {1}\n Shares Colors : {2}", card.Name, card.CardColors[0].ToString(), cardIsInCommanderColors);
+                    var cardColors = ChangeCardColorsToList(card.CardColors, false);
+                    var cardIsInCommanderColors = cardColors.Any(x => CommanderColors.Any(y => y == x));
                     if(!cardIsInCommanderColors){
                         invalidColoredCards.Add(card);
                     }
                 }
             }
-
-            System.Console.WriteLine("Deck has 100 cards : {0}", isValidSize);
-            System.Console.WriteLine("Deck size : {0}/100", deck.Count());
-
             if(isValidCardNum && isValidSize && isValidColors){
                 return true;
             }
@@ -89,32 +81,34 @@ namespace Controllers
         }
 
         //Helper Methods
-        public bool CheckCardAmounts(int maxAmount, List<string> deck){
+        public bool CheckCardAmounts(int maxAmount, List<Card> deck){
             bool isValidNum = false;
             List<string> refList = new List<string> {"Forest", "Mountain", "Island", "Plains", "Swamp", "Wastes"};
             Dictionary<string, int> allCards = new Dictionary<string, int>();
             //Check if there are only 4 or less copies of a card in the deck
-            foreach(string card in deck){
-                if(allCards.ContainsKey(card) == true){
-                    if(allCards[card] > 4 && !refList.Contains(card)){
+            foreach(Card card in deck){
+                if(allCards.ContainsKey(card.Name) == true){
+                    if(allCards[card.Name] > maxAmount && !refList.Contains(card.Name)){
                         isValidNum = false;
                     }
                     else{
                         isValidNum = true;
                     }
-                    allCards[card] += 1;
+                    allCards[card.Name] += 1;
                 }
                 else{
-                    allCards.Add(card, 1);
+                    allCards.Add(card.Name, 1);
                 }
             } 
-            System.Console.WriteLine(deck.Count());
-            foreach(KeyValuePair<string, int> ele2 in allCards)
-            {
-                Console.WriteLine("{0} : {1}", ele2.Key, ele2.Value);
-            }
-            System.Console.WriteLine("Deck has only 4 or less copies of each card : {0}", isValidNum);
             return isValidNum;
+        }
+
+        public List<string> ChangeCardColorsToList(string cardColors, bool isCommander){
+            List<string> colors = cardColors.Split(',').ToList();
+            if(!colors.Contains("C") && isCommander){
+                colors.Add("C");
+            }
+            return colors;
         }
     }
 }

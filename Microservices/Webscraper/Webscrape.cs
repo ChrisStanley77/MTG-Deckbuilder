@@ -103,7 +103,7 @@ public class search
                 ca.CardColors = ca.CardColors.Replace(@"""", "");
                 if(ca.CardColors.Equals(""))
                 {
-                    ca.CardColors = "COLORLESS";
+                    ca.CardColors = "C";
                 }
                 //SET NAME
                 r = new Regex(rSetName);

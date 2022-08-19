@@ -1,0 +1,118 @@
+version: "3.9"
+services:
+
+  # Service Example / Notes
+  # ==================
+  # name_of_service:                                    # This can be any name you want
+  #   build: ./docker/<folder_name_here>                # This is where you would have dockerfile plus any required dlls, jars, files, etc
+  #   image: <desired_image_name_here>                  # This is where you can put the desired name of the image for when it gets built
+  #   container_name: <desired_container_name_here>     # This is where you can put the desired name of the container for when it gets built
+  #   ports:
+  #     - "<container_port>:<virtual_port>"             # This is where you can put the desired ports
+  #   networks:
+  #     - <network_name_here>                           # This is where you can attach this service to a desired network 
+  
+  api_gateway:
+    build: ./docker/api_gateway
+    image: mtg-apigateway:1.0
+    container_name: api_gateway
+    depends_on:
+      - eureka
+    ports:
+      - "80:8888"
+    networks:
+      - basenetwork
+
+  account_service:
+    build: ./docker/account_service
+    image: mtg-accountservice:1.0
+    depends_on:
+      - registration_service
+      - account_database
+    ports:
+      - "5009"
+    networks:
+      - basenetwork
+    deploy:
+      replicas: 1
+  
+  email_service:
+    build: ./docker/email_service
+    image: mtg-emailservice:1.0
+    depends_on:
+      - registration_service
+    ports: 
+      - "8080"
+    networks:
+      - basenetwork
+    deploy:
+      replicas: 1
+
+  rules_service:
+    build: ./docker/rules_service
+    image: mtg-rules_service:1.0
+    depends_on:
+      - registration_service
+    ports:
+      - "8080"
+    networks:
+      - basenetwork
+    deploy:
+      replicas: 1
+
+  card_service:
+    build: ./docker/card_service
+    image: mtg-card_service:1.0
+    depends_on:
+      - registration_service
+      - card_database
+    ports:
+      - "8080"
+    networks:
+      - basenetwork
+    deploy:
+      replicas: 1
+
+  webscraper_service:
+    build: ./docker/webscraper_service
+    image: mtg-webscraper_service:1.0
+    depends_on:
+      - registration_service
+      - card_database
+    ports:
+      - "5130"
+    networks:
+      - basenetwork
+    deploy:
+      replicas: 1
+
+  card_database:
+    image: "mongo:latest"
+    container_name: carddb
+    environment:
+      MONGO_INITDB_DATABASE: "CardDb"
+    ports:
+      - "10018:27017"
+    networks:
+      - basenetwork
+
+  account_database:
+    build: ./docker/sql_creation
+    image: sql-test-creation:1.0
+    container_name: sqlserver
+    ports:
+      - "10020:1433"
+    networks:
+      - basenetwork
+
+  registration_service:
+    image: "steeltoeoss/eureka-server"
+    container_name: "eureka"
+    ports:
+      - "10021:8761"
+    networks:
+    - basenetwork
+  
+networks:
+  basenetwork:
+    name: "mtg"

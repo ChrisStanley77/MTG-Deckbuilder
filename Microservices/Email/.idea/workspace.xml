@@ -4,14 +4,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e15ab21-2d56-4ef4-8726-a5bbdf73589b" name="Changes" comment="" />
+    <list default="true" id="0e15ab21-2d56-4ef4-8726-a5bbdf73589b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../DockerCompose/api_gateway/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DockerCompose/api_gateway/GatewayDemo-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DockerCompose/card_service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DockerCompose/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DockerCompose/email_service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DockerCompose/email_service/EmailService-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DockerCompose/rules_service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DockerCompose/sql_creation/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DockerCompose/sql_creation/SQLCreation.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DockerCompose/sql_creation/entrypoint.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DockerCompose/Card-Service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DockerCompose/Rules-Service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DockerCompose/SQL_DB/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DockerCompose/SQL_DB/SQLCreation.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DockerCompose/SQL_DB/entrypoint.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/bin/Release/net6.0/Card.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/bin/Release/net6.0/Card.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/bin/Release/net6.0/Card.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/bin/Release/net6.0/Card.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/bin/Release/net6.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/bin/Release/net6.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/bin/Release/net6.0/publish/Card.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/bin/Release/net6.0/publish/Card.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/bin/Release/net6.0/publish/Card.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/bin/Release/net6.0/publish/Card.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/bin/Release/net6.0/publish/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/bin/Release/net6.0/publish/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/obj/Card.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/obj/Card.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/obj/Card.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/obj/Card.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/obj/Release/net6.0/Card.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/obj/Release/net6.0/ref/Card.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/obj/Release/net6.0/ref/Card.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/obj/Release/net6.0/refint/Card.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/obj/Release/net6.0/refint/Card.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Card/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/../Card/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/neumont/edu/sen300/emailservice/EmailServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/neumont/edu/sen300/emailservice/EmailServiceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/neumont/edu/sen300/emailservice/endpoints/EmailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/neumont/edu/sen300/emailservice/endpoints/EmailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/neumont/edu/sen300/emailservice/errorhandling/ExceptionMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/neumont/edu/sen300/emailservice/errorhandling/ExceptionMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/neumont/edu/sen300/emailservice/errorhandling/InternalExceptionOverride.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/neumont/edu/sen300/emailservice/errorhandling/InternalExceptionOverride.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/neumont/edu/sen300/emailservice/models/Email.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/neumont/edu/sen300/emailservice/models/Email.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/neumont/edu/sen300/emailservice/models/SMTPAuthenticator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/neumont/edu/sen300/emailservice/models/SMTPAuthenticator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/neumont/edu/sen300/emailservice/models/SendMail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/neumont/edu/sen300/emailservice/models/SendMail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/neumont/edu/sen300/emailservice/EmailServiceApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/neumont/edu/sen300/emailservice/EmailServiceApplicationTests.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -30,19 +77,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;be7345c66fe9574d454298a08f8f36e2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/JoshuaJohnson/Documents/GitHub/MTG-Deckbuilder/Microservices/Email",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "be7345c66fe9574d454298a08f8f36e2"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.EmailServiceApplication">
+    <configuration name="EmailServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Email" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.neumont.edu.sen300.emailservice.EmailServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EmailServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="EmailService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.neumont.edu.sen300.emailservice.EmailServiceApplication" />
@@ -66,6 +121,7 @@
       <workItem from="1658445187707" duration="210000" />
       <workItem from="1658445447723" duration="55000" />
       <workItem from="1658478651034" duration="119000" />
+      <workItem from="1660661126601" duration="637000" />
     </task>
     <servers />
   </component>

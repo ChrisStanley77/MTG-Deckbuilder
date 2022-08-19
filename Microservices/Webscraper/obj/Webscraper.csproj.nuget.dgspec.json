@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ldouglas\\OneDrive\\Year_2\\PRO290\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj": {}
+    "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ldouglas\\OneDrive\\Year_2\\PRO290\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj": {
+    "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ldouglas\\OneDrive\\Year_2\\PRO290\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj",
+        "projectUniqueName": "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj",
         "projectName": "Webscraper",
-        "projectPath": "C:\\Users\\ldouglas\\OneDrive\\Year_2\\PRO290\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj",
-        "packagesPath": "C:\\Users\\ldouglas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ldouglas\\OneDrive\\Year_2\\PRO290\\MTG-Deckbuilder\\Microservices\\Webscraper\\obj\\",
+        "projectPath": "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj",
+        "packagesPath": "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Webscraper\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ldouglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\JoshuaJohnson\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +39,20 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.16.1, )"
+            },
+            "Steeltoe.Discovery.Eureka": {
+              "target": "Package",
+              "version": "[3.2.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -61,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

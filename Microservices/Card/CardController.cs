@@ -82,29 +82,26 @@ namespace Controllers
         [Route("makeitem")]
         public async Task<IActionResult> MakeCard(Card card)
         {
-            if(card.Name is not null && card.Image is not null && card.Set is not null && card.Text is not null &&
+            if(card.Name is not null && card.Image is not null && card.Set is not null && card.OracleText is not null &&
             card.Type is not null && card.CardColors is not null)
             {
                 if(!card.Name.Equals(""))
                 {
                     if(!card.Image.Equals(""))
                     {
-                        if(!card.Text.Equals(""))
+                        if(!card.OracleText.Equals(""))
                         {
                             if(!card.Type.Equals(""))
                             {
                                 if(!card.Set.Equals(""))
                                 {
-                                    if(card.ConvertedManaCost >= 0)
+                                    if(!card.ConvertedManaCost.Equals(""))
                                     {
                                         int AllColorsInList = card.CardColors.Count();
                                         int ValidColors = 0;
-                                        foreach(string color in card.CardColors)
+                                        if(!card.CardColors.Equals(""))
                                         {
-                                            if(!color.Equals(""))
-                                            {
-                                                ValidColors++;
-                                            }
+                                            ValidColors++;
                                         }
                                         if(ValidColors == AllColorsInList)
                                         {
