@@ -2,6 +2,9 @@ import React from "react";
 import {useState} from "react";
 
 function DecksPage(){
+    const [search, setSearch] = useState("");
+    const [decks, setDecks] = useState([]);
+
     return(
         <div>
             {/*Update this tag with the user's username*/}

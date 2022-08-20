@@ -2340,19 +2340,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\": {}
+    "C:\\Users\\cstanley\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj",
+      "projectUniqueName": "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj",
       "projectName": "Webscraper",
-      "projectPath": "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj",
-      "packagesPath": "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Webscraper\\obj\\",
+      "projectPath": "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj",
+      "packagesPath": "C:\\Users\\cstanley\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Webscraper\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\JoshuaJohnson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cstanley\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
