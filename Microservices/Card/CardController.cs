@@ -75,6 +75,13 @@ namespace Controllers
             return NotFound();
         }
 
+        [HttpGet]
+        [Route("test")]
+        public string Test()
+        {
+            return "Hello from card service";
+        }
+
 ///////////////////////////////// All Posts ////////////////////////////////////////////////////////////////////////////////////
 
         //Make a card
