@@ -1,13 +1,13 @@
-import Movie from './Movie'
+import Card from './Card.js'
 
 // rafce
-const MovieList = (props) => {
+const CardList = (props) => {
   return (
-    <div className='movieList'>
+    <div className='cardList'>
         {
-          props.movies.map((movie) => (
-            <div key={movie.imdbID}>
-              <Movie movie={movie} />
+          props.cards?.map((card) => (
+            <div key={card}>
+              <Card card={card} />
             </div>
           ))
         }
@@ -15,4 +15,4 @@ const MovieList = (props) => {
   )
 }
 
-export default MovieList
+export default CardList

@@ -45,7 +45,8 @@ function HomePage(){
   }
   const getData = () => {
     // Setup our URL
-    const url = `http://80/card-service/card/getallitems`;
+    const url = "http://localhost:80/webscraper/card/getallitems/";
+    console.log(url);
 
     // Fetch our movies
     fetch(url)
@@ -58,7 +59,7 @@ function HomePage(){
   }
 
   const handleClick = () => {
-    
+    getData();
     console.log(search);
   }
 
@@ -79,6 +80,7 @@ function HomePage(){
         <div>
           <button onClick={() => handleClick()} className='button' type='submit'>Search</button>
         </div>
+        <CardList cards = {cards} />
         <div style={{ margin: '50px' }}>
           <img src="https://c1.scryfall.com/file/scryfall-cards/png/front/0/0/00020b05-ecb9-4603-8cc1-8cfa7a14befc.png?1562633475" alt="react logo" style={{ width: '200px', }}/>
         </div>
