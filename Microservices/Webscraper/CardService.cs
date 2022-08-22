@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using Settings;
+using System.Linq;
 
 namespace Service
 {
@@ -24,18 +25,18 @@ namespace Service
             await _card.Find(_ => true).ToListAsync();
 
         public async Task<Card?> GetIdAsync(string id) => 
-            await _card.Find(i => i.Id == id).FirstOrDefaultAsync();
+            await _card.Find(i => i.Id.Equals(id)).FirstOrDefaultAsync();
 
         public async Task<Card?> GetNameAsync(string name) =>
-            await _card.Find(i => i.Name == name).FirstOrDefaultAsync();
+            await _card.Find(i => i.Name.Equals(name)).FirstOrDefaultAsync();
 
         public async Task<List<Card>> GetTypeAsync(string type) =>
-            await _card.Find(i => i.Type == type).ToListAsync();
+            await _card.Find(i => i.Type.Equals(type)).ToListAsync();
 
         public async Task<List<Card>> GetSetAsync(string set) =>
-            await _card.Find(i => i.Set == set).ToListAsync();
+            await _card.Find(i => i.Set.Contains(set, StringComparer.OrdinalIgnoreCase)).ToListAsync();
 
-        public async Task<List<Card>> GetCardCostAsync(int ConvertedManaCost) =>
+        public async Task<List<Card>> GetCardCostAsync(string ConvertedManaCost) =>
             await _card.Find(i => i.ConvertedManaCost.Equals(ConvertedManaCost)).ToListAsync();
 
         public async Task<List<Card>> GetCardByColorsAsync(string color) =>

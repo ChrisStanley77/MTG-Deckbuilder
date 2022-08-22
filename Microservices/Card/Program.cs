@@ -7,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDiscoveryClient(builder.Configuration);
 builder.Services.Configure<CardDatabaseSettings>(builder.Configuration.GetSection("CardDatabase"));
-builder.Services.Configure<DeckDatabaseSettings>(builder.Configuration.GetSection("DeckDatabase"));
 builder.Services.AddSingleton<CardService>();
+builder.Services.Configure<DeckDatabaseSettings>(builder.Configuration.GetSection("DeckDatabase"));
 builder.Services.AddSingleton<DeckService>();
 builder.Services.AddCors(options =>
 {
