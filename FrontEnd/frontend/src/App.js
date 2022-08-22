@@ -82,7 +82,7 @@ function HomePage(){
           <img src="https://c1.scryfall.com/file/scryfall-cards/png/front/0/0/00020b05-ecb9-4603-8cc1-8cfa7a14befc.png?1562633475" alt="react logo" style={{ width: '200px', }}/>
         </div>
         <div style={{ margin: '50px' }}>
-          <img src="https://c1.scryfall.com/file/scryfall-cards/png/front/0/0/00020b05-ecb9-4603-8cc1-8cfa7a14befc.png?1562633475" alt="react logo" style={{ width: '200px', }}/>
+          <img src="https://c1.scryfall.com/file/scryfall-cards/png/front/0/0/00042443-4d4e-4087-b4e5-5e781e7cc5fa.png?1562894988" alt="react logo" style={{ width: '200px', }}/>
         </div>
       </div>
     </BrowserRouter>
