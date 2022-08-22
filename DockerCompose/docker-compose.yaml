@@ -13,7 +13,7 @@ services:
   #     - <network_name_here>                           # This is where you can attach this service to a desired network 
   
   api_gateway:
-    build: ./docker/api_gateway
+    build: ./api_gateway
     image: mtg-apigateway:1.0
     container_name: api_gateway
     depends_on:
@@ -24,7 +24,7 @@ services:
       - basenetwork
 
   account_service:
-    build: ./docker/account_service
+    build: ./account_service
     image: mtg-accountservice:1.0
     depends_on:
       - registration_service
@@ -37,7 +37,7 @@ services:
       replicas: 1
   
   email_service:
-    build: ./docker/email_service
+    build: ./email_service
     image: mtg-emailservice:1.0
     depends_on:
       - registration_service
@@ -49,7 +49,7 @@ services:
       replicas: 1
 
   rules_service:
-    build: ./docker/rules_service
+    build: ./rules_service
     image: mtg-rules_service:1.0
     depends_on:
       - registration_service
@@ -61,7 +61,7 @@ services:
       replicas: 1
 
   card_service:
-    build: ./docker/card_service
+    build: ./card_service
     image: mtg-card_service:1.0
     depends_on:
       - registration_service
@@ -74,7 +74,7 @@ services:
       replicas: 1
 
   webscraper_service:
-    build: ./docker/webscraper_service
+    build: ./webscraper_service
     image: mtg-webscraper_service:1.0
     depends_on:
       - registration_service
@@ -97,7 +97,7 @@ services:
       - basenetwork
 
   account_database:
-    build: ./docker/sql_creation
+    build: ./sql_creation
     image: sql-test-creation:1.0
     container_name: sqlserver
     ports:
