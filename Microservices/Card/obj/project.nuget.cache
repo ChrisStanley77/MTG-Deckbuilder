@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GLE4DwAQ/Ti/Em9CI0XXG9AtWOImWzuM8VN+BKW93qrXBNQ6Rf+IBoz7LZXjgDxsagCiBd/wvNpmiG47X4mEwQ==",
+  "dgSpecHash": "GCb59c9WGYhiPTb6hoaG0anlPbVcNFHE2+uosm09O6+YfhJ9R0XZrNG1EwenyoFVYePGk2ptTfzsFimPxi+GOg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj",
+  "projectFilePath": "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Card\\Card.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.6\\microsoft.entityframeworkcore.6.0.6.nupkg.sha512",
