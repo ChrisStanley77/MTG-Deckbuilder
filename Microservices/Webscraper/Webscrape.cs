@@ -151,8 +151,8 @@ public class Card
     public string Id { get; set; } = null!;
     public string Image { get; set;} = null!;
     public string Name { get; set;} = null!;
-    public string? ManaCost { get; set;} = null!;
-    public string? ConvertedManaCost { get; set;} = null;
+    public string ManaCost { get; set;} = null!;
+    public string ConvertedManaCost { get; set;} = null!;
     public string CardColors { get; set;} = null!;
     public string Type { get; set;} = null!;
     public string OracleText { get; set;} = null!;

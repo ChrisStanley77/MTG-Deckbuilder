@@ -45,8 +45,8 @@ namespace Controllers
         //Get all card by specified converted mana cost
         [HttpGet]
         [Route("getbycmc/{cost}")]
-        public async Task<List<Card>> GetByConvertedManaCost(int convertedManaCost) =>
-            await _card.GetCardCostAsync(convertedManaCost);
+        public async Task<List<Card>> GetByConvertedManaCost(string cost) =>
+            await _card.GetCardCostAsync(cost);
 
         //Get card by specified id
         [HttpGet("{id}")]
