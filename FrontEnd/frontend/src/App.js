@@ -32,8 +32,8 @@ const DisplayAnImage = (props) => {
 }
 
 function HomePage(){
-  const [search, setSearch] = useState("");
-  const [cards, setCards] = useState([]);
+  // const [search, setSearch] = useState("");
+  // const [cards, setCards] = useState([]);
 
   const handleChange = (e) => {
     const {id, value} = e.target;
@@ -42,19 +42,19 @@ function HomePage(){
         setSearch(value);
     }
   }
-  const getData = () => {
-    // Setup our URL
-    const url = `http://localhost/5153/card/getallitems`;
+  // const getData = () => {
+  //   // Setup our URL
+  //   const url = `http://localhost/5153/card/getallitems`;
 
-    // Fetch our movies
-    fetch(url)
-      .then(resp => resp.json())
-      .then(data => {
-        // Do something with our data
-        console.log(data);
-        setCards(data.Name);
-      });
-  }
+  //   // Fetch our movies
+  //   fetch(url)
+  //     .then(resp => resp.json())
+  //     .then(data => {
+  //       // Do something with our data
+  //       console.log(data);
+  //       setCards(data.Name);
+  //     });
+  // }
 
   const handleClick = () => {
     
