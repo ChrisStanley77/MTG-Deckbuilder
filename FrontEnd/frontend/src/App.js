@@ -45,7 +45,9 @@ function HomePage(){
   }
   const getData = () => {
     // Setup our URL
-    const url = "http://localhost:80/webscraper/card/getallitems/";
+    const url = `http://localhost:80/webscraper/card/getbyname/${search.replace(" ", "%20")}`;
+    // const url = `http://localhost:80/webscraper/card/getbytype/${search.replace(" ", "%20")}`;
+    // const url = `http://localhost:80/webscraper/card/getallitems`;
     
     console.log(url);
 
@@ -54,12 +56,26 @@ function HomePage(){
       .then(resp => resp.json())
       .then(data => {
         // Do something with our data
-        const obj = JSON.stringify(data).split("image\":\"", 100);
-        for(let str in obj){
-          let png = obj[str].substring(0, 109)
-          pngs.push(png);
-          console.log(png);
+        // const obj = JSON.stringify(data).split("image\":\"", 100);
+        // for(let str in obj){
+        //   let png = obj[str].substring(0, 109)
+        //   pngs.push(png);
+        //   console.log(png);
+        // }
+        var imgs = '';
+        var count = 0;
+        if(data.image){
+          imgs += `<div> <img src="${data.image}" width="250px"/> </div>`;
+        }else{
+          count = 0;
+          for(let json in data){
+            if(count < 50){
+              imgs += `<div> <img src="${data[json].image}" width="250px"/> </div>`;
+              count++;
+            }
         }
+        }
+        document.getElementById("cards").innerHTML = imgs;
 
       });
   }
@@ -85,15 +101,7 @@ function HomePage(){
         </div>
         <div>
           <button onClick={() => handleClick()} className='button' type='submit'>Search</button>
-          {/* <div ng-repeat="let x in pngs" style={{margin: '50px'}}>
-            <img src={{x}} alt="mtg Card" style={{ width: '200px'}}/>
-          </div> */}
-        </div>
-        <div style={{ margin: '50px' }}>
-          <img src="https://c1.scryfall.com/file/scryfall-cards/png/front/0/0/00020b05-ecb9-4603-8cc1-8cfa7a14befc.png?1562633475" alt="react logo" style={{ width: '200px', }}/>
-        </div>
-        <div style={{ margin: '50px' }}>
-          <img src="https://c1.scryfall.com/file/scryfall-cards/png/front/0/0/00042443-4d4e-4087-b4e5-5e781e7cc5fa.png?1562894988" alt="react logo" style={{ width: '200px', }}/>
+          <div id="cards"></div>
         </div>
       </div>
     </BrowserRouter>
