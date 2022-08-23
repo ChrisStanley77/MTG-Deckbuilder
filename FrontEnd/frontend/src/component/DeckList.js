@@ -5,7 +5,7 @@ const DeckList = (props) => {
         <div className='deckList'>
             {
             props.decks.map((deck) => (
-                <div key={deck.deckName}>
+                <div key={deck.deckId}>
                 <Deck deck={deck} />
                 </div>
             ))

@@ -3,7 +3,7 @@ using Service;
 using System;
 using System.Net;
 
-namespace Controllers
+namespace CardController
 {
     [ApiController]
     [Route("card")]
