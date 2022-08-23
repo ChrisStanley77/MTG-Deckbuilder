@@ -45,7 +45,8 @@ function HomePage(){
   }
   const getData = () => {
     // Setup our URL
-    const url = `http://localhost:80/webscraper/card/getbytype/${search.replace(" ", "%20")}`;
+    const url = `http://localhost:80/webscraper/card/getbyname/${search.replace(" ", "%20")}`;
+    // const url = `http://localhost:80/webscraper/card/getbytype/${search.replace(" ", "%20")}`;
     // const url = `http://localhost:80/webscraper/card/getallitems`;
     
     console.log(url);
@@ -61,12 +62,12 @@ function HomePage(){
         //   pngs.push(png);
         //   console.log(png);
         // }
-        console.log(data.length);
         var imgs = '';
         var count = 0;
         if(data.image){
           imgs += `<div> <img src="${data.image}" width="250px"/> </div>`;
         }else{
+          count = 0;
           for(let json in data){
             if(count < 50){
               imgs += `<div> <img src="${data[json].image}" width="250px"/> </div>`;
@@ -75,7 +76,6 @@ function HomePage(){
         }
         }
         document.getElementById("cards").innerHTML = imgs;
-        console.log(imgs);
 
       });
   }
