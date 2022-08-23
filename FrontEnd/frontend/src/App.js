@@ -34,7 +34,7 @@ import {BrowserRouter, Link} from "react-router-dom";
 
 function HomePage(){
   const [search, setSearch] = useState("Consuming Aberration");
-  const [cards, setCards] = useState([]);
+  const pngs = [];
 
   const handleChange = (e) => {
     const {id, value} = e.target;
@@ -46,6 +46,7 @@ function HomePage(){
   const getData = () => {
     // Setup our URL
     const url = "http://localhost:80/webscraper/card/getallitems/";
+    
     console.log(url);
 
     // Fetch our movies
@@ -53,8 +54,13 @@ function HomePage(){
       .then(resp => resp.json())
       .then(data => {
         // Do something with our data
-        console.log(data);
-        setCards(data.Name);
+        const obj = JSON.stringify(data).split("image\":\"", 100);
+        for(let str in obj){
+          let png = obj[str].substring(0, 109)
+          pngs.push(png);
+          console.log(png);
+        }
+
       });
   }
 
@@ -79,8 +85,10 @@ function HomePage(){
         </div>
         <div>
           <button onClick={() => handleClick()} className='button' type='submit'>Search</button>
+          {/* <div ng-repeat="let x in pngs" style={{margin: '50px'}}>
+            <img src={{x}} alt="mtg Card" style={{ width: '200px'}}/>
+          </div> */}
         </div>
-        <CardList cards = {cards} />
         <div style={{ margin: '50px' }}>
           <img src="https://c1.scryfall.com/file/scryfall-cards/png/front/0/0/00020b05-ecb9-4603-8cc1-8cfa7a14befc.png?1562633475" alt="react logo" style={{ width: '200px', }}/>
         </div>
