@@ -28,19 +28,19 @@ namespace Service
             await _card.Find(i => i.Id.Equals(id)).FirstOrDefaultAsync();
 
         public async Task<Card?> GetNameAsync(string name) =>
-            await _card.Find(i => i.Name.Equals(name)).FirstOrDefaultAsync();
+            await _card.Find(i => i.Name.ToLower().Contains(name.ToLower())).FirstOrDefaultAsync();
 
         public async Task<List<Card>> GetTypeAsync(string type) =>
-            await _card.Find(i => i.Type.Equals(type)).ToListAsync();
+            await _card.Find(i => i.Type.ToLower().Contains(type.ToLower())).ToListAsync();
 
         public async Task<List<Card>> GetSetAsync(string set) =>
-            await _card.Find(i => i.Set.Contains(set, StringComparer.OrdinalIgnoreCase)).ToListAsync();
+            await _card.Find(i => i.Set.ToLower().Contains(set.ToLower())).ToListAsync();
 
         public async Task<List<Card>> GetCardCostAsync(string ConvertedManaCost) =>
-            await _card.Find(i => i.ConvertedManaCost.Equals(ConvertedManaCost)).ToListAsync();
+            await _card.Find(i => i.ConvertedManaCost.ToLower().Contains(ConvertedManaCost.ToLower())).ToListAsync();
 
         public async Task<List<Card>> GetCardByColorsAsync(string color) =>
-            await _card.Find(i => i.CardColors.Contains(color)).ToListAsync();
+            await _card.Find(i => i.CardColors.ToLower().Contains(color.ToLower())).ToListAsync();
 
         public async Task CreateAsync(Card card) => 
             await _card.InsertOneAsync(card);
