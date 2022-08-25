@@ -132,14 +132,26 @@ public class search
 
         }
         File.Delete("cards.json");
+        List<Card> insertingCards = new List<Card>();
+        int counter = 0;
         foreach(Card c in cards)
         {
+            if(counter < 20)
+            {
+                insertingCards.Add(c);
+                counter++;
+            }else 
+            {
+                await _card.CreateMany(insertingCards);
+                insertingCards.Clear();
+                counter = 0;
+            }
                 // using (var client = new WebClient())
                 // {
                 //     string imgPath =  $@"img\{c.name}.png";
                 //     client.DownloadFile($@"""{c.pngUrl}""", imgPath);
                 // }
-            await _card.CreateAsync(c);
+            //await _card.CreateAsync(c);
         }
     }
 }

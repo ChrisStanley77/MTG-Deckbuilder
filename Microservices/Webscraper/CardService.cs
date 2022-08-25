@@ -27,34 +27,47 @@ namespace Service
         public async Task<Card?> GetIdAsync(string id) => 
             await _card.Find(i => i.Id.Equals(id)).FirstOrDefaultAsync();
 
-        public async Task<List<Card>> GetNameAsync(string name) =>
-            await _card.Find(i => i.Name.ToLower().Contains(name.ToLower())).ToListAsync();
+        public async Task<List<Card>> GetNameAsync(string name)
+        {
+            string nameLower = name.ToLower();
+            var filter = Builders<Card>.Filter.Where(c => c.Name.ToLower().Contains(nameLower));
+            return await _card.Find(filter).ToListAsync();
+        }
 
-        public async Task<List<Card>> GetTypeAsync(string type) {
+        public async Task<List<Card>> GetTypeAsync(string type) 
+        {
             var typeLower = type.ToLower();
             var filter = Builders<Card>.Filter.Where(c => c.Type.ToLower().Contains(typeLower));
-            return  _card.Find(filter).ToList();
-            // var result = await _card.Find(i =>  {
-            //         var sTypeLower = i.Type.ToLower();
-            //         var rTypeLower = type.ToLower();
-            //         return sTypeLower.Contains(rTypeLower);
-            //     }
-            // ).ToListAsync();
-            // return result;
+            return await _card.Find(filter).ToListAsync();
         }
             
 
-        public async Task<List<Card>> GetSetAsync(string set) =>
-            await _card.Find(i => i.Set.ToLower().Contains(set.ToLower())).ToListAsync();
+        public async Task<List<Card>> GetSetAsync(string set)
+        {
+            var setLower = set.ToLower();
+            var filter = Builders<Card>.Filter.Where(c => c.Set.ToLower().Contains(setLower));
+            return await _card.Find(filter).ToListAsync();
+        }
 
-        public async Task<List<Card>> GetCardCostAsync(string ConvertedManaCost) =>
-            await _card.Find(i => i.ConvertedManaCost.ToLower().Contains(ConvertedManaCost.ToLower())).ToListAsync();
+        public async Task<List<Card>> GetCardCostAsync(string ConvertedManaCost)
+        {
+            var cmc = ConvertedManaCost.ToLower();
+            var filter = Builders<Card>.Filter.Where(c => c.ConvertedManaCost.ToLower().Contains(cmc));
+            return await _card.Find(filter).ToListAsync();
+        }
 
-        public async Task<List<Card>> GetCardByColorsAsync(string color) =>
-            await _card.Find(i => i.CardColors.ToLower().Contains(color.ToLower())).ToListAsync();
+        public async Task<List<Card>> GetCardByColorsAsync(string color)
+        {
+            var colorLower = color.ToLower();
+            var filter = Builders<Card>.Filter.Where(c => c.CardColors.ToLower().Contains(colorLower));
+            return await _card.Find(filter).ToListAsync();
+        }
 
         public async Task CreateAsync(Card card) => 
             await _card.InsertOneAsync(card);
+
+        public async Task CreateMany(List<Card> cards) =>
+            await _card.InsertManyAsync(cards);
 
         public async Task UpdateAsync(string id, Card newCard) => 
             await _card.ReplaceOneAsync(i => i.Id == id, newCard);

@@ -46,7 +46,8 @@ function HomePage(){
   const getData = () => {
     // Setup our URL
     const url = `http://localhost:80/webscraper/card/getbyname/${search.replace(" ", "%20")}`;
-    // const url = `http://localhost:80/webscraper/card/getbytype/${search.replace(" ", "%20")}`;
+    //const url = `http://localhost:80/webscraper/card/getbytype/${search.replace(" ", "%20")}`;
+    //const url = `http://localhost:80/webscraper/card/getbyset/${search.replace(" ", "%20")}`;
     // const url = `http://localhost:80/webscraper/card/getallitems`;
     
     console.log(url);
@@ -65,12 +66,12 @@ function HomePage(){
         var imgs = '';
         var count = 0;
         if(data.image){
-          imgs += `<div> <img src="${data.image}" width="250px"/> </div>`;
+          imgs += `<img src="${data.image}" width="250px className='images' style="margin: 5px""/>`;
         }else{
           count = 0;
           for(let json in data){
             if(count < 50){
-              imgs += `<div> <img src="${data[json].image}" width="250px"/> </div>`;
+              imgs += `<img src="${data[json].image}" className='images' width="250px" style="margin: 5px"/>`;
               count++;
             }
         }
@@ -101,7 +102,10 @@ function HomePage(){
         </div>
         <div>
           <button onClick={() => handleClick()} className='button' type='submit'>Search</button>
-          <div id="cards"></div>
+          <div className='cardBox'>
+            <div id="cards"></div>
+          </div>
+          
         </div>
       </div>
     </BrowserRouter>
