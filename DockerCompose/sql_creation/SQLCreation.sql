@@ -1,6 +1,11 @@
-/****** Script for SelectTopNRows command from SSMS  ******/
-SELECT TOP (1000) [Id]
-    ,[Email]
-    ,[Username]
-    ,[Password]
-  FROM [mtg_deckbuilder].[dbo].[Accounts]
+Create Database mtg_deckbuilder
+GO
+
+use mtg_deckbuilder
+CREATE TABLE Accounts (
+	Id int IDENTITY(1,1) PRIMARY KEY,
+	Email varchar(50) NOT NULL,
+	Username varchar(50) NOT NULL,
+	Password varchar(50) NOT NULL
+);
+GO
