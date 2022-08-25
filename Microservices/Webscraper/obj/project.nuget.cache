@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bEFN0/YvArbIVuUwqVdfwIOpGYcdmPWZ4b088F4OdGsIYFAsglx3zA11O+A7fzDtnFUXoZnnUQv2XXG8xKM78w==",
+  "dgSpecHash": "LyjKin/V4txW/tWo9bRuBHvGbKuYsbflRQMI0eV5EdTnEoCWXMQl1oBwSl2dP4/eQ1PWzb1iR9ZDP9z72c5K7Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\JoshuaJohnson\\Documents\\GitHub\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj",
   "expectedPackageFiles": [
@@ -38,10 +38,10 @@
     "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
-    "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\mongodb.bson\\2.16.1\\mongodb.bson.2.16.1.nupkg.sha512",
-    "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\mongodb.driver\\2.16.1\\mongodb.driver.2.16.1.nupkg.sha512",
-    "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\mongodb.driver.core\\2.16.1\\mongodb.driver.core.2.16.1.nupkg.sha512",
-    "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\mongodb.libmongocrypt\\1.5.3\\mongodb.libmongocrypt.1.5.3.nupkg.sha512",
+    "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\mongodb.bson\\2.17.0\\mongodb.bson.2.17.0.nupkg.sha512",
+    "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\mongodb.driver\\2.17.0\\mongodb.driver.2.17.0.nupkg.sha512",
+    "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\mongodb.driver.core\\2.17.0\\mongodb.driver.core.2.17.0.nupkg.sha512",
+    "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\mongodb.libmongocrypt\\1.5.4\\mongodb.libmongocrypt.1.5.4.nupkg.sha512",
     "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
     "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\steeltoe.common\\3.2.1\\steeltoe.common.3.2.1.nupkg.sha512",
     "C:\\Users\\JoshuaJohnson\\.nuget\\packages\\steeltoe.common.abstractions\\3.2.1\\steeltoe.common.abstractions.3.2.1.nupkg.sha512",
