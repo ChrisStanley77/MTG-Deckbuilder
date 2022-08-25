@@ -7,6 +7,7 @@ import DecksPage from './DecksPage';
 import Deck from './DeckCreation';
 import CardList from './component/CardList';
 import {BrowserRouter, Link} from "react-router-dom";
+import React, { Component } from "react";
 
 // const styles = StyleSheet.create({
 //   container: {
@@ -43,16 +44,31 @@ function HomePage(){
         setSearch(value);
     }
   }
-  const getData = () => {
-    // Setup our URL
-    const url = `http://localhost:80/webscraper/card/getbyname/${search.replace(" ", "%20")}`;
-    //const url = `http://localhost:80/webscraper/card/getbytype/${search.replace(" ", "%20")}`;
-    //const url = `http://localhost:80/webscraper/card/getbyset/${search.replace(" ", "%20")}`;
-    // const url = `http://localhost:80/webscraper/card/getallitems`;
-    
+  
+  handleOptionChange: function (changeEvent) {
+    this.setState({
+      selectedOption: changeEvent.target.value
+    });
+  }
+
+  const getData = (e) => {
+    // Setup our URL 
+    const {value} = e.target.value
+
+    var url = "";
+
+    if(value === "Name"){
+      url = `http://localhost:80/webscraper/card/getbyname/${search.replace(" ", "%20")}`;
+    }else if (value === "Type"){
+      url = `http://localhost:80/webscraper/card/getbytype/${search.replace(" ", "%20")}`;
+    }else if (value === "Set"){
+      url = `http://localhost:80/webscraper/card/getbyset/${search.replace(" ", "%20")}`;
+    }else{
+      url = `http://localhost:80/webscraper/card/getallitems`;
+    }
     console.log(url);
 
-    // Fetch our movies
+    // Fetch our cards
     fetch(url)
       .then(resp => resp.json())
       .then(data => {
@@ -81,8 +97,8 @@ function HomePage(){
       });
   }
 
-  const handleClick = () => {
-    getData();
+  const handleClick = (e) => {
+    getData(e);
     console.log(search);
   }
 
@@ -101,7 +117,12 @@ function HomePage(){
           <input className="search" type={"text"} value={search} onChange= {(e) => handleChange(e)} id="search" placeholder="Search"></input>
         </div>
         <div>
-          <button onClick={() => handleClick()} className='button' type='submit'>Search</button>
+          <input type="radio" value="Name" name="searchType" checked={this.state.}/> Name
+          <input type="radio" value="Type" name="searchType" checked={url = `http://localhost:80/webscraper/card/getbytype/${search.replace(" ", "%20")}`}/> Type
+          <input type="radio" value="Set" name="searchType" checked={url = `http://localhost:80/webscraper/card/getbyset/${search.replace(" ", "%20")}`} /> Set
+        </div>
+        <div>
+          <button onClick={(e) => handleClick(e)} className='button' type='submit'>Search</button>
           <div className='cardBox'>
             <div id="cards"></div>
           </div>
