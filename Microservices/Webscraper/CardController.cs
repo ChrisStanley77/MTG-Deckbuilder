@@ -64,16 +64,8 @@ namespace Controllers
         //Get card by specified name
         [HttpGet]
         [Route("getbyname/{name}")]
-        public async Task<ActionResult<Card>> GetByName(string name)
-        {
-            var TempItem = await _card.GetNameAsync(name);
-
-            if(TempItem is not null)
-            {
-                return TempItem;
-            }
-            return NotFound();
-        }
+        public async Task<List<Card>> GetByName(string name) =>
+            await _card.GetNameAsync(name);
 
 ///////////////////////////////// All Posts ////////////////////////////////////////////////////////////////////////////////////
 
@@ -121,38 +113,38 @@ namespace Controllers
 /////////////////////////////// All Updates /////////////////////////////////////////////////////////////////////////////////
 
         //Update card by a specified name
-        [HttpPut]
-        [Route("{name}")]
-        public async Task<IActionResult> UpdateCard(string name, Card card)
-        {
-            //var TempItem = await _item.GetIdAsync(id);
-            var TempItem = await _card.GetNameAsync(name);
+        // [HttpPut]
+        // [Route("{name}")]
+        // public async Task<IActionResult> UpdateCard(string name, Card card)
+        // {
+        //     //var TempItem = await _item.GetIdAsync(id);
+        //     var TempItem = await _card.GetNameAsync(name);
 
-            if(TempItem!.Id is not null)
-            {
-                card.Id = TempItem.Id;
-                await _card.UpdateAsync(card.Id, card);
-                return NoContent();
-            }         
-            return NotFound();
-        }
+        //     if(TempItem!.Id is not null)
+        //     {
+        //         card.Id = TempItem.Id;
+        //         await _card.UpdateAsync(card.Id, card);
+        //         return NoContent();
+        //     }         
+        //     return NotFound();
+        // }
 
 ////////////////////////////// All Deletes //////////////////////////////////////////////////////////////////////////////////
 
         //Delete card by specified id
-        [HttpDelete]
-        [Route("{name}")]
-        public async Task<IActionResult> DeleteCard(string name)
-        {
-            var TempItem = await _card.GetNameAsync(name);
+        // [HttpDelete]
+        // [Route("{name}")]
+        // public async Task<IActionResult> DeleteCard(string name)
+        // {
+        //     var TempItem = await _card.GetNameAsync(name);
 
-            if(TempItem is not null)
-            {
-                await _card.RemoveAsync(TempItem.Name);
-                return NoContent();
-            }
-            return NotFound();
-        } 
+        //     if(TempItem is not null)
+        //     {
+        //         await _card.RemoveAsync(TempItem.Name);
+        //         return NoContent();
+        //     }
+        //     return NotFound();
+        // } 
 
         //Delete all cards
         [HttpDelete]

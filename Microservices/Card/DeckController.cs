@@ -12,7 +12,6 @@ namespace DeckController
     public class MyDeckController : ControllerBase
     {
 
-        private readonly ILogger _logger;
         private readonly DeckService _deck;
         public MyDeckController(DeckService deckService)
         {
@@ -61,8 +60,6 @@ namespace DeckController
         [Route("makeitem")]
         public async Task<IActionResult> MakeDeck(Deck deck)
         {
-
-            _logger.LogInformation("Deck representation in makeitem: " + deck.ToString());
             await _deck.CreateAsync(deck);
             return CreatedAtAction(nameof(GetAllItems), new {id = deck.Id}, deck);
         }
