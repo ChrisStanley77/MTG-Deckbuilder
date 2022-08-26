@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj": {}
+    "c:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj": {
+    "c:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj",
+        "projectUniqueName": "c:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj",
         "projectName": "Webscraper",
-        "projectPath": "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj",
+        "projectPath": "c:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj",
         "packagesPath": "C:\\Users\\cstanley\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Webscraper\\obj\\",
+        "outputPath": "c:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Webscraper\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

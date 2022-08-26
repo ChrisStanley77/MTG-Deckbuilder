@@ -9,32 +9,10 @@ import CardList from './component/CardList';
 import {BrowserRouter, Link} from "react-router-dom";
 import React, { Component } from "react";
 
-// const styles = StyleSheet.create({
-//   container: {
-//     paddingTop: 50,
-//   },
-//   Card: {
-//     width: 50,
-//     height: 100,
-//   },
-// });
-
-
-// const DisplayAnImage = (props) => {
-//   return (
-//     <View style={styles.container}>
-//       <Image
-//         style={styles.Card}
-//         source={{
-//           uri: 'https://reactnative.dev/img/tiny_logo.png',
-//         }}
-//       />
-//     </View>
-//   );
-// }
-
 function HomePage(){
   const [search, setSearch] = useState("Consuming Aberration");
+  const [type, setType] = useState("");
+  const [url, setUrl] = useState(`http://localhost:80/webscraper/card/getallitems`);
   const pngs = [];
 
   const handleChange = (e) => {
@@ -44,29 +22,41 @@ function HomePage(){
         setSearch(value);
     }
   }
-  
-  handleOptionChange: function (changeEvent) {
-    this.setState({
-      selectedOption: changeEvent.target.value
-    });
+
+  const handleSearchChange = (e) =>{
+    const {id, value} = e.target;
+
+    if(id === "Name"){
+      setType(value);
+      setUrl(`http://localhost:80/webscraper/card/getbyname/${search.replace(" ", "%20")}`);
+    }else if(id === "Type"){
+      setType(value);
+      setUrl(`http://localhost:80/webscraper/card/getbytype/${search.replace(" ", "%20")}`);
+    }else if(id === "Set"){
+      setType(value);
+      setUrl(`http://localhost:80/webscraper/card/getbyset/${search.replace(" ", "%20")}`);
+    }
+    //console.log(id);
   }
 
-  const getData = (e) => {
-    // Setup our URL 
-    const {value} = e.target.value
-
-    var url = "";
-
-    if(value === "Name"){
-      url = `http://localhost:80/webscraper/card/getbyname/${search.replace(" ", "%20")}`;
-    }else if (value === "Type"){
-      url = `http://localhost:80/webscraper/card/getbytype/${search.replace(" ", "%20")}`;
-    }else if (value === "Set"){
-      url = `http://localhost:80/webscraper/card/getbyset/${search.replace(" ", "%20")}`;
+  const setTheUrl = () => {
+    console.log(type);
+    if(type === "Name"){
+      setUrl(`http://localhost:80/webscraper/card/getbyname/${search.replace(" ", "%20")}`);
+    }else if (type === "Type"){
+      setUrl(`http://localhost:80/webscraper/card/getbytype/${search.replace(" ", "%20")}`);
+    }else if (type === "Set"){
+      setUrl(`http://localhost:80/webscraper/card/getbyset/${search.replace(" ", "%20")}`);
     }else{
-      url = `http://localhost:80/webscraper/card/getallitems`;
+      setUrl(`http://localhost:80/webscraper/card/getallitems`);
     }
     console.log(url);
+  }
+
+  const getData = () => {
+    // Setup our URL 
+    
+    //console.log(url);
 
     // Fetch our cards
     fetch(url)
@@ -97,8 +87,9 @@ function HomePage(){
       });
   }
 
-  const handleClick = (e) => {
-    getData(e);
+  const handleClick = () => {
+    setTheUrl();
+    getData();
     console.log(search);
   }
 
@@ -117,12 +108,12 @@ function HomePage(){
           <input className="search" type={"text"} value={search} onChange= {(e) => handleChange(e)} id="search" placeholder="Search"></input>
         </div>
         <div>
-          <input type="radio" value="Name" name="searchType" checked={this.state.}/> Name
-          <input type="radio" value="Type" name="searchType" checked={url = `http://localhost:80/webscraper/card/getbytype/${search.replace(" ", "%20")}`}/> Type
-          <input type="radio" value="Set" name="searchType" checked={url = `http://localhost:80/webscraper/card/getbyset/${search.replace(" ", "%20")}`} /> Set
+          <input type="radio" value="Name" name="searchType" id='Name' onChange= {(e) => handleSearchChange(e)}/> Name
+          <input type="radio" value="Type" name="searchType" id='Type' onChange= {(e) => handleSearchChange(e)}/> Type
+          <input type="radio" value="Set" name="searchType" id='Set' onChange= {(e) => handleSearchChange(e)}/> Set
         </div>
         <div>
-          <button onClick={(e) => handleClick(e)} className='button' type='submit'>Search</button>
+          <button onClick={() => handleClick()} className='button' type='submit'>Search</button>
           <div className='cardBox'>
             <div id="cards"></div>
           </div>
@@ -143,13 +134,5 @@ function App() {
     </div>
   );
 }
-
-// function App() {
-//   return (
-//     <div style={{ margin: '100px' }}>
-//       <img src="https://reactjs.org/logo-og.png" alt="react logo" style={{ width: '400px', }}/>
-//     </div>
-//   );
-// }
 
 export default App;

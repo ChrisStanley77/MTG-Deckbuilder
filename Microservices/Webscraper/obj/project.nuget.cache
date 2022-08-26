@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hk4HT4rtrQKopEOJEq3cT5mg1h4TTaFbXnT/9VTJIG+GmT1ZxR0RE97ES5QGfQDpqkZAlOSobVcbK6WIvfG45A==",
+  "dgSpecHash": "dnxhWykjGpi4CPywZ3hpsuSQ8D5E7l341g4r3pq8jlDOYIhjt9A15F5m6zsrNjy9FYmbnwengV97UFT8I553HA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj",
+  "projectFilePath": "c:\\Users\\cstanley\\git\\MTG-Deckbuilder\\Microservices\\Webscraper\\Webscraper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cstanley\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\cstanley\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.6\\microsoft.entityframeworkcore.6.0.6.nupkg.sha512",
