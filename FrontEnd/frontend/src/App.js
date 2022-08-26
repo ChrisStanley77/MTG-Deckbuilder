@@ -72,14 +72,16 @@ function HomePage(){
         var imgs = '';
         var count = 0;
         if(data.image){
-          imgs += `<img src="${data.image}" width="250px className='images' style="margin: 5px""/>`;
+          imgs += `<div>
+          <img src="${data.image}" width="250px className='images'" margin="30px" justify-content: center/>
+          <div><button className="button" type="submit">+</button></div>
+          </div>`;
         }else{
-          count = 0;
           for(let json in data){
-            if(count < 50){
-              imgs += `<img src="${data[json].image}" className='images' width="250px" style="margin: 5px"/>`;
-              count++;
-            }
+            imgs += `<div>
+            <img src="${data[json].image}" className='images' width="250px" margin="30px" justify-content: center/>
+            <button className="button" type="submit">+</button>
+            </div>`;
         }
         }
         document.getElementById("cards").innerHTML = imgs;
@@ -114,8 +116,7 @@ function HomePage(){
         </div>
         <div>
           <button onClick={() => handleClick()} className='button' type='submit'>Search</button>
-          <div className='cardBox'>
-            <div id="cards"></div>
+          <div id='cards' className='cardBox'>
           </div>
           
         </div>
