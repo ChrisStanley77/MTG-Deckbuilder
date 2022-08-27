@@ -78,11 +78,17 @@ function HomePage(){
           </div>`;
         }else{
           for(let json in data){
-            imgs += `<div>
-            <img src="${data[json].image}" className='images' width="250px" margin="30px" justify-content: center/>
-            <button className="button" type="submit">+</button>
-            </div>`;
-        }
+            var count = 0;
+            if(count < 1000){
+              imgs += `<div>
+              <img src="${data[json].image}" className='images' width="250px" margin="30px" justify-content: center/>
+              <button className="button" type="submit">+</button>
+              </div>`;
+              count++;
+            }
+            setType("");
+            setSearch("");
+          }
         }
         document.getElementById("cards").innerHTML = imgs;
 
