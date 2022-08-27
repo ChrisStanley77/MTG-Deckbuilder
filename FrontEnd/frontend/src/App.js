@@ -1,18 +1,19 @@
 import './App.css';
 import {useState} from "react";
-import { View, Image, StyleSheet } from 'react';
 import AccountCreation from './AccountCreation';
 import Login from './LoginPage';
 import DecksPage from './DecksPage';
 import Deck from './DeckCreation';
 import CardList from './component/CardList';
 import {BrowserRouter, Link} from "react-router-dom";
-import React, { Component } from "react";
+import React from "react";
 
 function HomePage(){
   const [search, setSearch] = useState("Consuming Aberration");
+  var [cards, setCards] = useState([]);
   const [type, setType] = useState("");
   const [url, setUrl] = useState(`http://localhost:80/webscraper/card/getallitems`);
+  const [deck, setDeck] = useState([]);
   const pngs = [];
 
   const handleChange = (e) => {
@@ -40,7 +41,6 @@ function HomePage(){
   }
 
   const setTheUrl = () => {
-    console.log(type);
     if(type === "Name"){
       setUrl(`http://localhost:80/webscraper/card/getbyname/${search.replace(" ", "%20")}`);
     }else if (type === "Type"){
@@ -69,27 +69,39 @@ function HomePage(){
         //   pngs.push(png);
         //   console.log(png);
         // }
-        var imgs = '';
-        var count = 0;
-        if(data.image){
-          imgs += `<div>
-          <img src="${data.image}" width="250px className='images'" margin="30px" justify-content: center/>
-          <div><button className="button" type="submit">+</button></div>
-          </div>`;
-        }else{
-          for(let json in data){
-            imgs += `<div>
-            <img src="${data[json].image}" className='images' width="250px" margin="30px" justify-content: center/>
-            <button className="button" type="submit">+</button>
-            </div>`;
-        }
-        }
-        document.getElementById("cards").innerHTML = imgs;
+        // var imgs = '';
+        // var count = 0;
+        // if(data.image){
+        //   imgs += `<div>
+        //   <img src="${data.image}" id="${data.name}" width="250px className='images'" margin="30px"/>
+        //   <button className="button" type="submit" onClick={() => addCardToDeck()}>+</button>
+        //   </div>`;
+        // }else{
+        //   for(let json in data){
+        //     imgs += `<div>
+        //     <img src="${data[json].image}" id="${data[json].name}" className='images' width="250px" margin="30px"/>
+        //     <button className="button" type="submit" onClick={(e) => addCardToDeck(e)}>+</button>
+        //     </div>`;
+        // }
+        // }
+        //document.getElementById("cards").innerHTML = imgs;
 
+
+        //setCards(cards);
+        for(var card in cards){
+          cards.pop()
+        }
+        
+        for(var i in data){
+          cards.push(data[i])
+        }
+        
       });
   }
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    console.log("submitted form");
     setTheUrl();
     getData();
     console.log(search);
@@ -106,20 +118,24 @@ function HomePage(){
             </Link>
           </nav>
         </div>
-        <div>      
-          <input className="search" type={"text"} value={search} onChange= {(e) => handleChange(e)} id="search" placeholder="Search"></input>
-        </div>
-        <div>
-          <input type="radio" value="Name" name="searchType" id='Name' onChange= {(e) => handleSearchChange(e)}/> Name
-          <input type="radio" value="Type" name="searchType" id='Type' onChange= {(e) => handleSearchChange(e)}/> Type
-          <input type="radio" value="Set" name="searchType" id='Set' onChange= {(e) => handleSearchChange(e)}/> Set
-        </div>
-        <div>
-          <button onClick={() => handleClick()} className='button' type='submit'>Search</button>
-          <div id='cards' className='cardBox'>
-          </div>
-          
-        </div>
+        <section>
+          <form className='searchForm' onSubmit={handleClick}>
+            <div>      
+              <input className="search" type='text' value={search} onChange= {(e) => handleChange(e)} id="search" placeholder="Search"></input>
+            </div>
+            <div>
+              <input type="radio" value="Name" name="searchType" id='Name' onChange= {(e) => handleSearchChange(e)}/> Name
+              <input type="radio" value="Type" name="searchType" id='Type' onChange= {(e) => handleSearchChange(e)}/> Type
+              <input type="radio" value="Set" name="searchType" id='Set' onChange= {(e) => handleSearchChange(e)}/> Set
+            </div>
+            <div>
+              <input type='submit' value='Search'/>
+            </div>
+          </form>
+          <CardList cardList={cards}/>
+          {/* <div className="deckList" id="deck"></div>
+          <div id='cards' className='cardBox'></div> */}
+        </section>
       </div>
     </BrowserRouter>
   );
