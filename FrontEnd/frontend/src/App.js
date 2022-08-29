@@ -14,7 +14,6 @@ function HomePage(){
   const [type, setType] = useState("");
   const [url, setUrl] = useState(`http://localhost:80/webscraper/card/getallitems`);
   const [deck, setDeck] = useState([]);
-  const pngs = [];
 
   const handleChange = (e) => {
     const {id, value} = e.target;
@@ -53,40 +52,11 @@ function HomePage(){
   }
 
   const getData = () => {
-    // Setup our URL 
-    
-    //console.log(url);
 
-    // Fetch our cards
     fetch(url)
       .then(resp => resp.json())
       .then(data => {
-        // Do something with our data
-        // const obj = JSON.stringify(data).split("image\":\"", 100);
-        // for(let str in obj){
-        //   let png = obj[str].substring(0, 109)
-        //   pngs.push(png);
-        //   console.log(png);
-        // }
-        // var imgs = '';
-        // var count = 0;
-        // if(data.image){
-        //   imgs += `<div>
-        //   <img src="${data.image}" id="${data.name}" width="250px className='images'" margin="30px"/>
-        //   <button className="button" type="submit" onClick={() => addCardToDeck()}>+</button>
-        //   </div>`;
-        // }else{
-        //   for(let json in data){
-        //     imgs += `<div>
-        //     <img src="${data[json].image}" id="${data[json].name}" className='images' width="250px" margin="30px"/>
-        //     <button className="button" type="submit" onClick={(e) => addCardToDeck(e)}>+</button>
-        //     </div>`;
-        // }
-        // }
-        //document.getElementById("cards").innerHTML = imgs;
 
-
-        //setCards(cards);
         for(var card in cards){
           cards.pop()
         }
@@ -129,7 +99,12 @@ function HomePage(){
               <input type='submit' value='Search'/>
             </div>
           </form>
-          <CardList cardList={cards}/>
+          <div className='currentDeck'>
+
+          </div>
+          <div>
+            <CardList cardList={cards}/>
+          </div>          
           {/* <div className="deckList" id="deck"></div>
           <div id='cards' className='cardBox'></div> */}
         </section>

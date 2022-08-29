@@ -7,7 +7,7 @@ const CardList = (props) => {
         {
           props.cardList.map((card) => (
             <div key={card.id}>
-              <Card card={card} />  
+              <Card card={card} /> 
             </div>
           ))
         }
