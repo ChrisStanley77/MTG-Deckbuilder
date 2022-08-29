@@ -1,4 +1,9 @@
-.cardImage{
-    width: 20px;
-    height: 40px;
+.image{
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.cardList{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(230px, 1fr));
 }

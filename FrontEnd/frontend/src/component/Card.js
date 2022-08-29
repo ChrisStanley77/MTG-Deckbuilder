@@ -6,7 +6,7 @@ const Card = ({card}) => {
     <div className='cardName'>
       { card.Name !== 'N/A' ?
         <div className='CardImage'>
-          <img src={card.image} alt='card' />
+          <img src={card.image} className='image' alt='card' />
           <input type='submit' value='+'/>
         </div> : ''
       }

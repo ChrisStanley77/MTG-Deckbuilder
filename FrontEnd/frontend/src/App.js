@@ -37,7 +37,6 @@ function HomePage(){
       setType(value);
       setUrl(`http://localhost:80/webscraper/card/getbyset/${search.replace(" ", "%20")}`);
     }
-    //console.log(id);
   }
 
   const setTheUrl = () => {
@@ -101,10 +100,8 @@ function HomePage(){
 
   const handleClick = (e) => {
     e.preventDefault();
-    console.log("submitted form");
     setTheUrl();
     getData();
-    console.log(search);
   }
 
   return(

@@ -1,24 +1,12 @@
 import Card from './Card.js'
+import '../Card.css';
 
 const CardList = (props) => {
-  
-  console.log(props)
-
-  var cards = props.cardList
-
-  //console.log("Start of cardlist: " + cards.Array);
-
-  console.log("Incoming card list: " + cards);
-
-  var cardArray = Array.from(cards);
-  
-  console.log("Card Array: " + cardArray);
-
   return (
     <div className='cardList'>
         {
           props.cardList.map((card) => (
-            <div key={card.Name}>
+            <div key={card.id}>
               <Card card={card} />  
             </div>
           ))
