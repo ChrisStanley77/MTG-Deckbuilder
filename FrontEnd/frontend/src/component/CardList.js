@@ -8,11 +8,11 @@ const CardList = (props) => {
 
   //console.log("Start of cardlist: " + cards.Array);
 
-  console.log("Incoming card list: " + cards)
+  console.log("Incoming card list: " + cards);
 
-  var cardArray = Array.from(cards)
+  var cardArray = Array.from(cards);
   
-  console.log("Card Array: dingus " + cardArray)
+  console.log("Card Array: " + cardArray);
 
   return (
     <div className='cardList'>
