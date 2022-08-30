@@ -5,7 +5,6 @@ import Login from './LoginPage';
 import DecksPage from './DecksPage';
 import Deck from './DeckCreation';
 import CardList from './component/CardList';
-import {BrowserRouter, Link} from "react-router-dom";
 import React from "react";
 import mtg from "./img/mtg.jpg";
 
@@ -39,16 +38,8 @@ function HomePage(){
   }
 
   return(
-    <BrowserRouter>
       <div>
         <h1 className='homeTitle'>Welcome to MTG Deck Builder</h1>
-        <div className='buttonLogin'>
-          <nav>
-            <Link to={"/LoginPage"}>
-              <button className='login' type='submit'>Login</button>
-            </Link>
-          </nav>
-        </div>
         <section>
           <form className='searchForm' onSubmit={handleClick}>
             <div>      
@@ -73,7 +64,6 @@ function HomePage(){
           <div id='cards' className='cardBox'></div> */}
         </section>
       </div>
-    </BrowserRouter>
   );
 }
 
