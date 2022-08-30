@@ -14,11 +14,6 @@ function HomePage(){
   const [type, setType] = useState("");
   const [deck, setDeck] = useState([]);
 
-  const handleChange = (e) => {
-    setSearch(e.target.search);
-    console.log(e.target.search);
-  }
-
   const updateCards = () => {
     const apiUrl = ["name", "type", "set"].includes(type) 
       ? `http://localhost:80/webscraper/card/getby${type}/${search.replace(" ", "%20")}` 
