@@ -7,6 +7,7 @@ import Deck from './DeckCreation';
 import CardList from './component/CardList';
 import {BrowserRouter, Link} from "react-router-dom";
 import React from "react";
+import mtg from "./img/mtg.jpg";
 
 function HomePage(){
   const [search, setSearch] = useState("Consuming Aberration");
@@ -54,9 +55,9 @@ function HomePage(){
               <input className="search" type='text' value={search} onChange= {e => setSearch(e.target.value)} id="search" placeholder="Search"></input>
             </div>
             <div>
-              <input type="radio" name="searchType" onChange= {() => {setType("name")}}/> Name
-              <input type="radio" name="searchType" onChange= {() => {setType("type")}}/> Type
-              <input type="radio" name="searchType" onChange= {() => {setType("set")}}/> Set
+              <input className="radio" type="radio" name="searchType" onChange= {() => {setType("name")}}/> Name
+              <input className="radio" type="radio" name="searchType" onChange= {() => {setType("type")}}/> Type
+              <input className="radio" type="radio" name="searchType" onChange= {() => {setType("set")}}/> Set
             </div>
             <div>
               <input type='submit' value='Search'/>

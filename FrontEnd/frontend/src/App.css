@@ -2,6 +2,29 @@
   text-align: center;
 }
 
+body{
+  background-image:url(./img/mtg.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-attachment:fixed;
+}
+
+h1{
+  color: black;
+  text-shadow: 0 0 0.3em white, 0 0 0.3em white;
+  font-weight: bold;
+  text-align:center;
+  padding-top:2.5em;
+}
+
+.radio{
+  color: black;
+  text-shadow: 0 0 0.3em white, 0 0 0.3em white;
+  font-weight: bold;
+  text-align:center;
+  padding-top:2.5em;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -44,6 +67,8 @@
 .buttonLogin{
   text-align: right;
 }
+
+
 
 .login{
   border-radius: 50px;
