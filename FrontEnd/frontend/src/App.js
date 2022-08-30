@@ -10,68 +10,36 @@ import React from "react";
 
 function HomePage(){
   const [search, setSearch] = useState("Consuming Aberration");
-  var [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([]);
   const [type, setType] = useState("");
-  const [url, setUrl] = useState(`http://localhost:80/webscraper/card/getallitems`);
   const [deck, setDeck] = useState([]);
 
   const handleChange = (e) => {
-    const {id, value} = e.target;
-
-    if(id === "search"){
-        setSearch(value);
-    }
+    setSearch(e.target.search);
+    console.log(e.target.search);
   }
 
-  const handleSearchChange = (e) =>{
-    const {id, value} = e.target;
-
-    if(id === "Name"){
-      setType(value);
-      setUrl(`http://localhost:80/webscraper/card/getbyname/${search.replace(" ", "%20")}`);
-    }else if(id === "Type"){
-      setType(value);
-      setUrl(`http://localhost:80/webscraper/card/getbytype/${search.replace(" ", "%20")}`);
-    }else if(id === "Set"){
-      setType(value);
-      setUrl(`http://localhost:80/webscraper/card/getbyset/${search.replace(" ", "%20")}`);
-    }
-  }
-
-  const setTheUrl = () => {
-    if(type === "Name"){
-      setUrl(`http://localhost:80/webscraper/card/getbyname/${search.replace(" ", "%20")}`);
-    }else if (type === "Type"){
-      setUrl(`http://localhost:80/webscraper/card/getbytype/${search.replace(" ", "%20")}`);
-    }else if (type === "Set"){
-      setUrl(`http://localhost:80/webscraper/card/getbyset/${search.replace(" ", "%20")}`);
-    }else{
-      setUrl(`http://localhost:80/webscraper/card/getallitems`);
-    }
-    console.log(url);
-  }
-
-  const getData = () => {
-
-    fetch(url)
+  const updateCards = () => {
+    const apiUrl = ["name", "type", "set"].includes(type) 
+      ? `http://localhost:80/webscraper/card/getby${type}/${search.replace(" ", "%20")}` 
+      : `http://localhost:80/webscraper/card/getallitems`;
+      
+    fetch(apiUrl)
       .then(resp => resp.json())
       .then(data => {
-
-        for(var card in cards){
-          cards.pop()
-        }
-        
-        for(var i in data){
-          cards.push(data[i])
-        }
-        
+        console.log(data);
+        setCards(data);        
       });
+  }
+
+  const addCardToDeck = () => {
+    console.log("Got the card");
   }
 
   const handleClick = (e) => {
     e.preventDefault();
-    setTheUrl();
-    getData();
+    console.log("Handling click" + e.target);
+    updateCards();
   }
 
   return(
@@ -88,12 +56,12 @@ function HomePage(){
         <section>
           <form className='searchForm' onSubmit={handleClick}>
             <div>      
-              <input className="search" type='text' value={search} onChange= {(e) => handleChange(e)} id="search" placeholder="Search"></input>
+              <input className="search" type='text' value={search} onChange= {e => setSearch(e.target.value)} id="search" placeholder="Search"></input>
             </div>
             <div>
-              <input type="radio" value="Name" name="searchType" id='Name' onChange= {(e) => handleSearchChange(e)}/> Name
-              <input type="radio" value="Type" name="searchType" id='Type' onChange= {(e) => handleSearchChange(e)}/> Type
-              <input type="radio" value="Set" name="searchType" id='Set' onChange= {(e) => handleSearchChange(e)}/> Set
+              <input type="radio" name="searchType" onChange= {() => {setType("name")}}/> Name
+              <input type="radio" name="searchType" onChange= {() => {setType("type")}}/> Type
+              <input type="radio" name="searchType" onChange= {() => {setType("set")}}/> Set
             </div>
             <div>
               <input type='submit' value='Search'/>
