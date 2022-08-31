@@ -22,8 +22,10 @@ function HomePage(){
     fetch(apiUrl)
       .then(resp => resp.json())
       .then(data => {
+
         console.log(data);
         setCards(data);        
+
       });
   }
 

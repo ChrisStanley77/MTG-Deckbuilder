@@ -26,70 +26,65 @@ services:
   account_service:
     build: ./account_service
     image: mtg-accountservice:1.0
-    container_name: account_service
     depends_on:
       - registration_service
       - account_database
     ports:
-      - "5009:5009"
+      - "5009"
     networks:
       - basenetwork
     deploy:
-      replicas: 1
+      replicas: 2
   
   email_service:
     build: ./email_service
     image: mtg-emailservice:1.0
-    container_name: email_service
     depends_on:
       - registration_service
     ports: 
-      - "8082:8080"
+      - "8080"
     networks:
       - basenetwork
     deploy:
-      replicas: 1
+      replicas: 2
 
   rules_service:
     build: ./rules_service
     image: mtg-rules_service:1.0
-    container_name: rules_service
     depends_on:
       - registration_service
     ports:
-      - "8081:8080"
+      - "8080"
     networks:
       - basenetwork
     deploy:
-      replicas: 1
+      replicas: 2
 
   card_service:
     build: ./card_service
     image: mtg-card_service:1.0
-    container_name: card_service
     depends_on:
       - registration_service
       - card_database
     ports:
-      - "8080:8080"
+      - "8080"
     networks:
       - basenetwork
     deploy:
-      replicas: 1
+      replicas: 2
 
   webscraper_service:
     build: ./webscraper_service
     image: mtg-webscraper_service:1.0
-    container_name: webscraper_service
     depends_on:
       - registration_service
       - card_database
     ports:
-      - "5130:5130"
+      - "8080"
     networks:
       - basenetwork
     deploy:
-      replicas: 1
+      replicas: 2
 
   card_database:
     image: "mongo:latest"
