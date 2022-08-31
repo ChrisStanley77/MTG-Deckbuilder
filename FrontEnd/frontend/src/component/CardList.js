@@ -1,13 +1,13 @@
 import Card from './Card.js'
+import '../Card.css';
 
-// rafce
 const CardList = (props) => {
   return (
     <div className='cardList'>
         {
-          props.cards?.map((card) => (
-            <div key={card}>
-              <Card card={card} />
+          props.cardList.map((card) => (
+            <div key={card.id}>
+              <Card card={card} /> 
             </div>
           ))
         }
